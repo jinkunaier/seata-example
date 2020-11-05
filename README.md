@@ -1,2 +1,2 @@
-# Sofa-Ark
-Sofa-Ark learning project.
+# seata-example
+seata learning project.
