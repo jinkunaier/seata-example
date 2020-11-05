@@ -1,0 +1,39 @@
+eureka:
+    instance:
+        hostname: localhost
+        prefer-ip-address: true
+    client:
+        serviceUrl:
+            defaultZone: http://${eureka.instance.hostname}:8761/eureka/
+feign:
+    client:
+        config:
+            default:
+                connectTimeout: 5000
+                readTimeout: 10000
+logging:
+    level:
+        io:
+            seata: info
+mybatis:
+    mapperLocations: classpath:mapper/*.xml
+    typeAliasesPackage: io.seata.sample.entity
+server:
+    port: 8181
+spring:
+    application:
+        name: account-server
+    cloud:
+        alibaba:
+            seata:
+                tx-service-group: my_test_tx_group
+    datasource:
+#        url: jdbc:mysql://localhost/seat-account
+#        driver-class-name: com.mysql.jdbc.Driver
+#        username: root
+#        password: 1
+        url: jdbc:oracle:thin:@localhost:1521/orcl
+        driver-class-name: oracle.jdbc.OracleDriver
+        username: seata_account
+        password: 1
+        
